@@ -9,6 +9,7 @@
 \input{config/packages}
 \input{config/thesis_config}
 
+
 \date{}
 
 \hypersetup{pdfstartview=}
@@ -20,21 +21,20 @@
     \input{preface/3_acknowledgements}
     \input{preface/4_abstract}
     \input{preface/5_table_of_contents}
-    \printglossary[type=\acronymtype, title=Acronimi e abbreviazioni, toctitle=Acronimi e abbreviazioni]
-    \printglossary[type=main, title=Glossario, toctitle=Glossario]
     \blankpage % example of a blank page that also increases the page couter by 1
 
     \mainmatter
-    \input{chapters/1_introduction}
-    \input{chapters/2_processes}
-    \input{chapters/3_stage_desc}
-    \input{chapters/4_requirement_analysis}
-    \input{chapters/5_design_coding}
-    \input{chapters/6_verify_validate}
-    \input{chapters/7_conclusions}
+    \input{chapters/Contesto_lavorativo/Contesto_lavorativo}
+    \input{chapters/Scopo_dello_stage/Scopo_del_progetto}
+    \input{chapters/Sviluppo_del_progetto/Sviluppo_del_progetto}
+    \input{chapters/Valutazione_retrospettiva/Valutazione_retrospettiva}
 
     \pagenumbering{roman}
     \backmatter
     \input{references/bibliography}
     \input{references/webliography}
+    \printglossary[type=\acronymtype, title=Acronimi e abbreviazioni, toctitle=Acronimi e abbreviazioni]
+    \label{acronimi}
+    \printglossary[type=main, title=Glossario, toctitle=Glossario]
+    \label{glossario}
 \end{document}

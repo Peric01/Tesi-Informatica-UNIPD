@@ -5,12 +5,27 @@
 \let\clearpage\relax
 \let\cleardoublepage\relax
 \chapter*{Sommario}
-Il presente documento descrive il lavoro svolto durante il periodo di stage, della durata di circa
+Il presente elaborato descrive il lavoro svolto durante il periodo di stage, della durata di circa
 320 ore, dal laureando Marko Peric presso l'azienda Eurosystem S.p.A. dal 18/06/2024 al
 13/08/2025.
-Lo stage consiste nella progettazione e sviluppo di un sistema honeypot per il monitoraggio e la
-rilevazione di attività malevole in rete, con l'obiettivo di migliorare la sicurezza informatica
-dell'azienda.
+L'elaborato illustra i processi, le metodologie e gli strumenti impiegati nella progettazione e nello sviluppo di un sistema \textit{honeypot} finalizzato al monitoraggio e alla rilevazione di attività malevole in rete. Il sistema si basa sull'installazione di servizi volutamente vulnerabili su un server Linux Debian, con lo scopo di attirare potenziali attaccanti e analizzarne i comportamenti. I \textit{log} generati dai servizi vengono successivamente raccolti, elaborati e trasferiti in InfluxDB per la loro conservazione, e resi disponibili tramite Grafana per consentire un'analisi e una visualizzazione efficace delle informazioni tramite \textit{dashboard}.
+\section*{Struttura dell'elaborato}
+In questa sezione viene presentata la struttura dell'elaborato, illustrando brevemente il contenuto di ciascun capitolo:
+\begin{description}
+    \item[{\hyperref[chap:]{Il primo capitolo}}] approfondisce il contesto aziendale in cui si è svolto lo \textit{stage}, fornendo una panoramica completa dell'azienda, dei suoi prodotti e servizi nel settore della cybersecurity, degli strumenti tecnologici utilizzati e dell'organizzazione del team di sicurezza informatica, analizzando inoltre l'approccio dell'azienda verso l'innovazione tecnologica;
 
+    \item[{\hyperref[chap:]{Il secondo capitolo}}] identifica e analizza il problema alla base del progetto, definendo gli obiettivi specifici dello sviluppo del sistema \textit{honeypot}, i vincoli operativi e tecnici che hanno influenzato il lavoro, le prospettive di sviluppo futuro e le motivazioni personali che hanno guidato la scelta di questo percorso di stage;
+
+    \item[{\hyperref[chap:]{Il terzo capitolo}}] documenta l'intero processo di sviluppo del sistema honeypot, dall'analisi dei requisiti e dei casi d'uso alla progettazione dell'architettura, dalla fase di codifica alle attività di verifica e validazione, presentando il prodotto finale e valutando il grado di conformità rispetto ai requisiti iniziali;
+    
+    \item[{\hyperref[chap:]{Il quarto capitolo}}] presenta una valutazione retrospettiva dell'esperienza formativa, analizzando il raggiungimento degli obiettivi prefissati, le conoscenze tecniche acquisite nel campo della sicurezza informatica e le competenze professionali sviluppate durante il periodo di tirocinio presso l'azienda.
+\end{description}
+\section*{Criteri tipografici adottati}
+Riguardo la stesura del testo, relativamente al elaborato sono state adottate le seguenti convenzioni tipografiche:
+\begin{itemize}
+	\item gli acronimi e le abbreviazioni sono raccolti in un'apposita sezione dedicata, denominata \hyperref[acronimi]{Elenco degli acronimi} e sono segnati con la seguente nomenclatura \gls{es};
+    \item i termini ambigui o di uso non comune, invece, sono definiti all'interno del \hyperref[glossario]{Glossario} e sono segnati con la seguente nomenclatura \gls{esempio};
+	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \textit{corsivo}.
+\end{itemize}
 \endgroup
 \vfill
