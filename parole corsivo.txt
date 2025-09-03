@@ -1,0 +1,37 @@
+cybersecurity
+honeypot
+stage
+team
+log
+logging
+logger
+backup
+disaster recovery
+report
+container
+test
+testing
+problem solving
+firewall
+antivirus
+script
+dummy
+netcat
+Python
+pipeline
+Bash
+output
+pattern
+dashboard
+audit
+auditd
+open source
+stack
+software
+design
+pattern
+AI
+ML
+IT
+TIG
+MQTT
