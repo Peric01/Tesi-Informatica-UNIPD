@@ -1,2 +1,107 @@
 \section{Validazione}
-In questa sezione si illustra il processo di validazione del progetto sviluppato, includendo i test con strumenti di controllo e la verifica del rispetto dei requisiti.
+La validazione rappresenta la fase conclusiva del processo di sviluppo, volta a garantire che il sistema \textit{software} realizzato risponda effettivamente alle esigenze e ai requisiti definiti in fase di analisi. A differenza della verifica, che si concentra sul corretto funzionamento del prodotto rispetto alle specifiche tecniche, la validazione ha come obiettivo principale quello di accertare la coerenza del sistema rispetto agli obiettivi aziendali e operativi prefissati.  
+
+Per raggiungere tale scopo ho seguito una metodologia strutturata che ha previsto:
+\begin{itemize}
+    \item la definizione di scenari di attacco realistici, basati su casi d'uso e minacce tipiche;
+    \item l'impiego di strumenti consolidati per la simulazione, come \textit{Nmap} per la scansione delle porte e \textit{Hydra} per attacchi di \textit{brute-force};
+    \item l'esecuzione di \textit{test} pratici sui servizi vulnerabili dell'\textit{honeypot}, con particolare attenzione alla generazione, raccolta e visualizzazione dei \textit{log}.
+\end{itemize}
+
+Ho condotto le attività con un approccio incrementale: inizialmente ho testato ogni servizio singolarmente, per poi essere validarli nel contesto del sistema integrato. Questo mi ha permesso di verificare non solo la robustezza dei singoli moduli, ma anche la correttezza del flusso complessivo dei dati dal momento dell'attacco simulato fino alla loro visualizzazione nei sistemi di monitoraggio.  
+
+Le fasi di validazione si sono svolte nell'arco di una settimana, l'ultima dello stage, con revisioni e confronti quotidiani con il tutor aziendale, il quale ha seguito da vicino tutte le attività, fornendo indicazioni e approvazioni parziali. Al termine del processo, il tutor ha rilasciato la propria approvazione finale, confermando la validità del sistema sviluppato.  
+
+\subsection*{Conformità ai requisiti}
+Dei requisiti iniziali definiti nella sezione \hyperref[requisiti]{requisiti}, il sistema sviluppato soddisfa pienamente tutti i requisiti funzionali, non funzionali e di vincolo.
+Sebbene i requisiti non vadano a coprire completamente tutte le funzionalità richieste dagli obiettivi del progetto, il sistema risulta comunque essere un prodotto valido e funzionante, in grado di monitorare e analizzare efficacemente i tentativi di attacco sui servizi vulnerabili selezionati.
+\begin{center}
+\begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Categoria}} & \multicolumn{1}{c|}{\textbf{Percentuale soddisfatta}}\\ 
+\hline 
+\endfirsthead
+\multicolumn{2}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{Categoria}} & \multicolumn{1}{c|}{\textbf{Percentuale soddisfatta}}\\ \hline 
+\endhead
+\hline
+\multicolumn{2}{|r|}{{Continua nella prossima pagina...}}\\
+\hline
+\endfoot
+\endlastfoot 
+
+Funzionali & 100\%\\ \hline
+Non funzionali & 100\%\\ \hline
+Vincolo & 100\%\\ \hline
+\caption{Requisiti soddisfatti dal sistema sviluppato.}
+\label{tab:requisiti-soddisfatti}
+\end{longtable}
+\end{center}
+
+\subsection*{Risultati quantitativi}
+Complessivamente, abbiamo eseguito oltre trenta scenari di simulazioni di attacco, comprendenti scansioni, \textit{brute-force} e caricamenti di file malevoli. Tutti e quattro i servizi vulnerabili previsti hanno ricevuto la validazione ottenendo quattro tipologie distinte di \textit{log}, a conferma della tracciabilità completa lungo la \textit{pipeline} di raccolta e visualizzazione.
+Facendo ciò abbiamo raggiunto i seguenti dati di validazione:
+
+\begin{center}
+\begin{longtable}{|p{0.18\textwidth}|p{0.15\textwidth}|p{0.35\textwidth}|p{0.2\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Servizio}} & 
+\multicolumn{1}{c|}{\textbf{Scenari testati}} & 
+\multicolumn{1}{c|}{\textbf{Tipologie attacchi}} & 
+\multicolumn{1}{c|}{\textbf{Log generati}} \\ 
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{4}{|c|}{\textbf{Scenari di attacco testati}} \\ \hline
+\endhead
+
+\hline \multicolumn{4}{|r|}{{Continua nella prossima pagina...}} \\ \hline
+\endfoot
+
+\endlastfoot
+
+\textit{Cowrie (SSH)} & 12 & \textit{Brute-force, command injection} & 86 eventi \\ \hline
+\textit{Dionaea} & 8 & \textit{Multi-protocol, malware upload} & 77 eventi \\ \hline
+\textit{Apache} & 7 & \textit{Directory traversal, XSS} & 34 eventi \\ \hline
+\textit{OpenLDAP} & 6 & \textit{LDAP injection, enumeration} & 28 eventi \\ \hline
+\textbf{TOTALE} & 33 & 8 tipologie & 225 eventi \\ \hline
+
+\caption{Tabella quantitativa degli scenari di attacco testati e dei log generati.}
+\label{tab:scenari-attacco}
+\end{longtable}
+\end{center}
+
+
+\begin{center}
+\begin{longtable}{|p{0.15\textwidth}|p{0.15\textwidth}|p{0.25\textwidth}|p{0.3\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Strumento}} & 
+\multicolumn{1}{c|}{\textbf{Scansioni eseguite}} & 
+\multicolumn{1}{c|}{\textbf{Parametri testati}} & 
+\multicolumn{1}{c|}{\textbf{Risultati ottenuti}} \\ 
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{4}{|c|}{\textbf{Strumenti e risultati di testing}} \\ \hline
+\endhead
+
+\hline \multicolumn{4}{|r|}{{Continua nella prossima pagina...}} \\ \hline
+\endfoot
+
+\endlastfoot
+
+\textit{Nmap} & 12 & Porte, servizi, \textit{OS detection} & 100\% servizi rilevati \\ \hline
+\textit{Hydra} & 8 & \textit{Brute-force SSH, FTP} & 100\% tentativi \textit{loggati} \\ \hline
+\textit{LDAP-utils} & 6 & \textit{LDAP queries, file upload} & 100\% eventi tracciati \\ \hline
+
+\caption{Tabella quantitativa degli strumenti e dei risultati dei test.}
+\label{tab:strumenti-testing}
+\end{longtable}
+\end{center}
+
+L'insieme di queste attività, unite all'approvazione del tutor aziendale, dimostra che il sistema soddisfa i requisiti funzionali, non funzionali e di vincolo definiti in fase di analisi, garantendo affidabilità, correttezza e coerenza operativa del prodotto sviluppato.

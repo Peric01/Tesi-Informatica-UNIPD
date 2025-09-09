@@ -1,6 +1,117 @@
 \section{Codifica}
 \subsection{Struttura del progetto}
-Viene presentata l'organizzazione del codice e dei file del progetto, descrivendo la struttura delle cartelle, i pattern di sviluppo utilizzati e le convenzioni adottate per garantire manutenibilità e leggibilità.
+\normalsize
+La struttura del progetto è organizzata in diverse cartelle principali, ciascuna con una responsabilità specifica. La cartella \texttt{config} contiene i \textit{file} per la configurazione dell'applicazione, includendo \texttt{environment\_config.py} per la gestione delle variabili e dei parametri di ambiente e \texttt{\_\_init\_\_.py} per l'inizializzazione della cartella stessa.\\
+All'interno della cartella \texttt{core} si trovano i moduli fondamentali per l'esecuzione del sistema. \texttt{main.py} rappresenta l'\textit{entry point} dell'applicazione, mentre \texttt{geomap\_ip.py} si occupa della geolocalizzazione degli indirizzi IP. La raccolta dei \textit{log} viene gestita tramite \texttt{log\_collector.py}, la coordinazione dei servizi è affidata a \texttt{service\_manager.py} e l'esecuzione concorrente tramite \textit{thread} è curata da \texttt{thread\_manager.py}.\\
+La cartella \texttt{logger} si dedica alla gestione centralizzata dei \textit{log}. \texttt{log\_manager.py} configura e gestisce il \textit{logger} principale, mentre \texttt{custom\_formatter.py} definisce formati personalizzati, ad esempio con codifica colore in base al livello di gravità.\\
+Per quanto riguarda l'intelligence open source, la cartella \texttt{osint} include moduli specifici. \texttt{base\_osint.py} definisce l'interfaccia comune per le integrazioni \textit{OSINT}, \texttt{osint\_factory.py} permette di istanziare dinamicamente i moduli come \texttt{abuseipdb.py}, \texttt{shodan.py} e \texttt{virustotal.py}, ciascuno dedicato a una diversa fonte di dati.\\
+La cartella \texttt{parsers} raccoglie i parser per l'analisi e la normalizzazione dei \textit{log}. La classe base \texttt{base\_parser.py} definisce l'interfaccia comune, mentre \texttt{parser\_factory.py} consente di creare i \textit{parser} specifici per \texttt{cowrie\_parser.py}, \texttt{dionaea\_parser.py}, \texttt{apache\_parser.py}, \texttt{osint\_parser.py} e \texttt{LDAP\_parser.py}.\\
+Infine, la cartella \texttt{publishers} contiene i moduli responsabili della pubblicazione dei \textit{log} verso sistemi esterni. \texttt{base\_publisher.py} definisce l'interfaccia astratta, \texttt{mqtt\_publisher.py} implementa un \textit{publisher} basato su \textit{MQTT} e \texttt{publisher\_factory.py} permette di creare dinamicamente i \textit{publisher} in base al contesto operativo.\\
+Per rappresentare visivamente questa struttura, è possibile utilizzare il seguente albero:\\
+
+\dirtree{%
+.1 src/.
+.2 config/.
+.3 \_\_init\_\_.py.
+.3 environment\_config.py.
+.2 core/.
+.3 \_\_init\_\_.py.
+.3 main.py.
+.3 geomap\_ip.py.
+.3 log\_collector.py.
+.3 service\_manager.py.
+.3 thread\_manager.py.
+.2 logger/.
+.3 \_\_init\_\_.py.
+.3 custom\_formatter.py.
+.3 log\_manager.py.
+.2 osint/.
+.3 \_\_init\_\_.py.
+.3 base\_osint.py.
+.3 abuseipdb.py.
+.3 shodan.py.
+.3 virustotal.py.
+.3 osint\_factory.py.
+.2 parsers/.
+.3 \_\_init\_\_.py.
+.3 base\_parser.py.
+.3 parser\_factory.py.
+.3 cowrie\_parser.py.
+.3 dionaea\_parser.py.
+.3 apache\_parser.py.
+.3 osint\_parser.py.
+.3 LDAP\_parser.py.
+.2 publishers/.
+.3 \_\_init\_\_.py.
+.3 base\_publisher.py.
+.3 mqtt\_publisher.py.
+.3 publisher\_factory.py.
+}
+In conclusione, le tabelle seguenti sintetizzano la dimensione e la complessità delle componenti sviluppate, riportando linee di codice, file creati e funzioni/metodi implementati. Esse illustrano inoltre le configurazioni e gli script ausiliari realizzati per l'implementazione e l'automazione dei servizi, specificando quantità e descrizione di ciascun tipo di file.
+\begin{center}
+\begin{longtable}{|p{0.25\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.2\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Componente}} & 
+\multicolumn{1}{c|}{\textbf{Linee di codice}} & 
+\multicolumn{1}{c|}{\textbf{File creati}} & 
+\multicolumn{1}{c|}{\textbf{Funzioni/Metodi}} \\ 
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{4}{|c|}{\textbf{Metriche di implementazione}} \\ \hline
+\endhead
+
+\hline \multicolumn{4}{|r|}{{Continua nella prossima pagina...}} \\ \hline
+\endfoot
+
+\endlastfoot
+
+\textit{Core system} & 305 & 5 & 15 \\ \hline
+\textit{Logger module} & 79 & 2 & 4 \\ \hline
+\textit{Parsers} & 404 & 7 & 7 \\ \hline
+\textit{Publishers} & 80 & 3 & 18 \\ \hline
+\textit{OSINT integrations} & 108 & 5 & 7 \\ \hline
+\textit{Configuration} & 32 & 1 & 1 \\ \hline
+\textbf{TOTALE} & \textbf{1.008} & \textbf{23} & \textbf{52} \\ \hline
+
+\caption{Tabella quantitativa delle metriche di implementazione del codice.}
+\label{tab:metriche-codice}
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{|p{0.25\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.3\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Tipo}} & 
+\multicolumn{1}{c|}{\textbf{Quantità}} & 
+\multicolumn{1}{|c|}{\textbf{Numero di versioni}} & 
+\multicolumn{1}{c|}{\textbf{Descrizione}} \\ 
+\hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{3}{|c|}{\textbf{Configurazioni e script ausiliari}} \\ \hline
+\endhead
+
+\hline \multicolumn{3}{|r|}{{Continua nella prossima pagina...}} \\ \hline
+\endfoot
+
+\endlastfoot
+
+\textit{Docker Compose files} & 2 & 5 & Orchestrazione dei servizi \\ \hline
+\textit{Dockerfile} & 3 & 4 & \textit{Container} personalizzati \\ \hline
+\textit{Script Bash} & 1 & 3 & Automazione del \textit{deployment} \\ \hline
+\textit{File} di configurazione \textit{Grafana} & 2 & 10 & \textit{Dashboard} e pannelli \\ \hline
+\textit{File} di configurazione \textit{Telegraf} & 1 & 5 & \textit{Pipeline} per la raccolta dati \\ \hline
+
+\caption{Tabella quantitativa delle configurazioni e degli script ausiliari.}
+\label{tab:configurazioni-script}
+\end{longtable}
+\end{center}
+
 \subsection{Difficoltà incontrate}
-La sezione analizza gli ostacoli incontrati durante lo sviluppo del progetto, sia di natura tecnica sia organizzativa.  
-Viene descritto come ciascuna difficoltà sia stata gestita e superata, evidenziando le soluzioni adottate.
+Durante lo sviluppo del progetto, uno dei principali ostacoli riscontrati è rappresentato dalla complessità nel rielaborare i \textit{log} generati dai diversi servizi. Questi dati, provenienti dall'\textit{honeypot} e da sistemi ausiliari, presentavano formati variabili, richiedendo l'implementazione di espressioni regolari altamente specifiche e flessibili. La difficoltà consisteva non solo nel catturare correttamente le informazioni rilevanti, ma anche nel garantire la robustezza dei \textit{parser} di fronte a formati imprevisti o a \textit{log} contenenti dati inconsistenti, senza interrompere il flusso complessivo di raccolta e analisi. Ho superato questo problema mediante l'utilizzo del \textit{logger} interno del sistema per tracciare gli errori di parsing tramite messaggi di \textit{debug}, permettendo di identificare e correggere rapidamente le espressioni regolari difettose.
+Un secondo aspetto critico riguardava la gestione della \textit{containerizzazione} tramite \textit{Docker} delle diverse componenti del sistema. La necessità di isolare i moduli, garantire l'interoperabilità tra servizi e preservare la sicurezza dell'ambiente ha reso necessario progettare con attenzione la rete dei \textit{container}, i volumi per la persistenza dei dati e la configurazione delle dipendenze. Problemi di compatibilità tra immagini, errori nella definizione dei \textit{Dockerfile} e difficoltà nella sincronizzazione dei \textit{container} tra loro hanno inizialmente rallentato le fasi di \textit{test} e \textit{deployment}. Sono riuscito a superare queste difficoltà grazie a una pianificazione accurata della struttura dei \textit{container}, all'uso di immagini standardizzate e alla creazione di \textit{script} di avvio automatizzati, consentendo di ottenere un ambiente stabile, sicuro e facilmente riproducibile.\\\\

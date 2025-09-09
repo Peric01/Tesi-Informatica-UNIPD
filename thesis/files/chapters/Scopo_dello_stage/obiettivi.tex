@@ -1,13 +1,13 @@
 \section{Obiettivi}
-Gli obiettivi che sono stati determinati come minimi, obbligatori, desiderabili o facoltativi per il progetto, sono elencati di seguito.
-Viene utilizzata la seguente nomenclatura per suddividere questi ultimi nelle quattro tipologie:
+Gli obiettivi che sono suddivisi in minimi, obbligatori, desiderabili o facoltativi e sono elencati di seguito.
+Utilizziamo la seguente nomenclatura per suddividere questi ultimi nelle quattro tipologie:
 \begin{itemize}
     \item \textbf{M}: sono gli obiettivi vincolanti e necessari per il completamento del progetto; 
     \item \textbf{O}: sono gli obiettivi primari richiesti per il progetto;
     \item \textbf{D}: sono gli obiettivi non vincolanti o strettamente necessari, ma che portano valore aggiunto al prodotto;
     \item \textbf{F}: sono gli obiettivi che portano valore aggiunto al prodotto in modo non indispensabile.
 \end{itemize}
-Ogni obiettivo è stato contrassegnato con un numero e la categoria corrispondente, al fine di garantire una classificazione chiara e ordinata.
+Ogni obiettivo è contrassegnato con un numero e la categoria corrispondente, al fine di garantire una classificazione chiara e ordinata.
 \begin{center}
 \begin{longtable}{|p{0.2\textwidth}|p{0.75\textwidth}|}
 \hline
@@ -16,7 +16,7 @@ Ogni obiettivo è stato contrassegnato con un numero e la categoria corrisponden
 \endfirsthead
 \multicolumn{2}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
 \hline
-\multicolumn{1}{|c|}{\textbf{Identificativo}} & \multicolumn{1}{c|}{Obiettivo}\\ \hline 
+\multicolumn{1}{|c|}{\textbf{Identificativo}} & \multicolumn{1}{c|}{\textbf{Obiettivo}}\\ \hline 
 \endhead
 \hline
 \multicolumn{2}{|r|}{{Continua nella prossima pagina...}}\\
@@ -32,22 +32,22 @@ M04 & Il progetto deve avere una documentazione coerente con quanto implementato
 
 \multicolumn{2}{|c|}{\textbf{Obiettivi Obbligatori}} \\ \hline
 O01 & Deve essere installata e configurata una macchina virtuale isolata per ambienti \textit{honeypot}. \\ \hline
-O02 & L'\textit{honeypot} prodotto deve essere realistico con configurazione di servizi vulnerabili (\textit{Apache}, \gls{ftp}, \gls{smb}, \gls{mqtt}, ecc.). \\ \hline
-O03 & Devono essere sviluppati servizi \textit{dummy} con \textit{netcat} o strumenti equivalenti per l’ascolto dei pacchetti. \\ \hline
+O02 & L'\textit{honeypot} prodotto deve essere realistico con configurazione di servizi vulnerabili (\textit{Apache}, \gls{ftp}\glsadd{ftp_def}, \gls{smb}\glsadd{smb_def}, \gls{mqtt}, ecc.). \\ \hline
+O03 & Devono essere sviluppati servizi \textit{dummy} con \textit{netcat} o strumenti equivalenti per l'ascolto dei pacchetti. \\ \hline
 O04 & I \textit{log} devono essere raccolti e centralizzati tramite \textit{Python} e \textit{pipeline} \gls{tig}. \\ \hline
 O05 & La raccolta dei \textit{log} deve essere automatizzata mediante \textit{script} \textit{Python}/\textit{Bash}. \\ \hline
 
 \multicolumn{2}{|c|}{\textbf{Obiettivi Desiderabili}} \\ \hline
-D01 & Deve essere effettuata un’analisi tecnica degli attacchi ricevuti con relativa correlazione dei dati. \\ \hline
-D02 & Devono essere integrati strumenti e tecniche di \textit{Threat Intelligence} e \gls{osint} per finalità di attribuzione. \\ \hline
+D01 & Deve essere effettuata un'analisi tecnica degli attacchi ricevuti con relativa correlazione dei dati. \\ \hline
+D02 & Devono essere integrati strumenti e tecniche di \textit{Threat Intelligence} e \gls{osint}\glsadd{osint_def} per finalità di attribuzione. \\ \hline
 D03 & Devono essere simulati attacchi controllati con strumenti noti e devono essere raccolti i relativi \textit{output}. \\ \hline
 D04 & Devono essere applicate tecniche di base di \textit{data analysis} per il riconoscimento di \textit{pattern}. \\ \hline
-D05 & Deve essere realizzata una \textit{dashboard} con grafici, \gls{ioc} e \textit{timeline} degli eventi. \\ \hline
+D05 & Deve essere realizzata una \textit{dashboard} con grafici, \gls{ioc}\glsadd{ioc_def} e \textit{timeline} degli eventi. \\ \hline
 
 \multicolumn{2}{|c|}{\textbf{Obiettivi Facoltativi}} \\ \hline
 F01 & Devono essere implementati controlli avanzati di \textit{audit} con \textit{auditd} e \textit{logging} \textit{Bash} persistente. \\ \hline
-F02 & Deve essere sperimentata la distribuzione dei dati verso \gls{siem} \textit{open source}. \\ \hline
-F03 & Devono essere introdotti strumenti di \gls{ai}/\gls{ml} per l’identificazione automatica di anomalie. \\ \hline
+F02 & Deve essere sperimentata la distribuzione dei dati verso \gls{siem}\glsadd{siem_def} \textit{open source}. \\ \hline
+F03 & Devono essere introdotti strumenti di \gls{ai}/\gls{ml} per l'identificazione automatica di anomalie. \\ \hline
 
 \caption{Elenco degli obiettivi suddivisi per categoria.}
 \label{tab:obiettivi}
