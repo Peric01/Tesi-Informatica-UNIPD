@@ -1,2 +1,89 @@
 \section{Obiettivi raggiunti}
-La sezione ha l'obiettivo di fornire una valutazione dettagliata dei risultati ottenuti durante lo \textit{stage}, evidenziando quali e quanti degli obiettivi precedentemente definiti siano stati effettivamente raggiunti.
+\subsection*{Obiettivi aziendali}
+Al termine del progetto, il tutor aziendale ha condotto una valutazione retrospettiva, confrontando i risultati ottenuti con gli obiettivi inizialmente definiti nella sezione \hyperref[tab:obiettivi]{Obiettivi}.\\\\
+La seguente tabella ne riassume gli esiti:
+\begin{center}
+\begin{longtable}{|p{0.15\textwidth}|p{0.60\textwidth}|p{0.15\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Identificativo}} & 
+\multicolumn{1}{c|}{\textbf{Obiettivo}} & 
+\multicolumn{1}{c|}{\textbf{Conseguito}} \\ 
+\hline
+\endfirsthead
+
+\multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{Identificativo}} & 
+\multicolumn{1}{c|}{\textbf{Obiettivo}} & 
+\multicolumn{1}{c|}{\textbf{Conseguito}} \\ \hline 
+\endhead
+
+\hline
+\multicolumn{3}{|r|}{{Continua nella prossima pagina...}}\\
+\hline
+\endfoot
+\endlastfoot 
+
+\multicolumn{3}{|c|}{\textbf{Obiettivi Minimi}} \\ \hline
+M01 & Il codice del progetto deve essere scritto in \textit{Python}, deve avere struttura modulare e commenti esplicativi. & Sì \\ \hline
+M02 & Il progetto deve presentare configurazioni leggibili, versionate e testate. & Sì \\ \hline
+M03 & Gli \textit{script} devono essere riutilizzabili e gli \textit{input} devono essere parametrizzabili. & Sì \\ \hline
+M04 & Il progetto deve avere una documentazione coerente con quanto implementato, scritta in forma tecnica, chiara e verificabile. & Sì \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{Obiettivi Obbligatori}} \\ \hline
+O01 & Deve essere installata e configurata una macchina virtuale isolata per ambienti \textit{honeypot}. & Sì \\ \hline
+O02 & L'\textit{honeypot} prodotto deve essere realistico con configurazione di servizi vulnerabili (\textit{Apache}, \textit{FTP}, \textit{SMB}, \textit{MQTT}, ecc.). & Sì \\ \hline
+O03 & Devono essere sviluppati servizi \textit{dummy} con \textit{netcat} o strumenti equivalenti per l'ascolto dei pacchetti. & Sì \\ \hline
+O04 & I \textit{log} devono essere raccolti e centralizzati tramite \textit{Python} e \textit{pipeline} \textit{TIG}. & Sì \\ \hline
+O05 & La raccolta dei \textit{log} deve essere automatizzata mediante \textit{script} \textit{Python}/\textit{Bash}. & Sì \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{Obiettivi Desiderabili}} \\ \hline
+D01 & Deve essere effettuata un'analisi tecnica degli attacchi ricevuti con relativa correlazione dei dati. & Sì \\ \hline
+D02 & Devono essere integrati strumenti e tecniche di \textit{Threat Intelligence} e \textit{OSINT} per finalità di attribuzione. & Sì \\ \hline
+D03 & Devono essere simulati attacchi controllati con strumenti noti e devono essere raccolti i relativi \textit{output}. & Sì \\ \hline
+D04 & Devono essere applicate tecniche di base di \textit{data analysis} per il riconoscimento di \textit{pattern}. & No \\ \hline
+D05 & Deve essere realizzata una \textit{dashboard} con grafici, \textit{IOC} e \textit{timeline} degli eventi. & Sì \\ \hline
+
+\multicolumn{3}{|c|}{\textbf{Obiettivi Facoltativi}} \\ \hline
+F01 & Devono essere implementati controlli avanzati di \textit{audit} con \textit{auditd} e \textit{logging} \textit{Bash} persistente. & No \\ \hline
+F02 & Deve essere sperimentata la distribuzione dei dati verso \textit{SIEM} \textit{open source}. & No \\ \hline
+F03 & Devono essere introdotti strumenti di \textit{AI}/\textit{ML} per l'identificazione automatica di anomalie. & No \\ \hline
+
+\caption{Tabella degli obiettivi conseguiti suddivisi per categoria.}
+\label{tab:obiettivi-soddisfatti}
+\end{longtable}
+\end{center}
+\label{post-obiettivi-soddisfatti}
+Il resoconto degli obiettivi minimi e obbligatori mostra come sono riuscito a raggiungerli completamente, fornendo così una base solida al progetto di \textit{cybersecurity} e dimostrando la piena implementazione delle funzionalità fondamentali richieste. La realizzazione di tutti questi obiettivi ha permesso di creare un sistema \textit{honeypot} funzionale e ben documentato, con servizi vulnerabili realistici e un sistema di raccolta e centralizzazione dei \textit{log} completamente automatizzato.\\\\
+Per quanto riguarda gli obiettivi desiderabili, sono riuscito a conseguirne quattro su cinque. L'unico obiettivo non raggiunto è il \textbf{D04}, che richiedeva l'applicazione di tecniche di base di \textit{data analysis} per il riconoscimento di \textit{pattern}. Il perseguimento di tale obiettivo si è rivelato più complesso del previsto, in quanto ha richiesto un approfondimento più specifico degli algoritmi di \textit{machine learning} applicati alla \textit{cybersecurity} e dell'analisi statistica avanzata dei dati di sicurezza raccolti, implicando competenze specialistiche che avrebbero necessitato di tempi di sviluppo aggiuntivi.
+Il resoconto degli obiettivi facoltativi evidenzia che non sono riuscito a raggiungerne nessuno, in quanto rappresentavano implementazioni avanzate che richiedevano un notevole investimento di tempo e risorse. L'introduzione di controlli avanzati di \textit{audit}, la sperimentazione con \textit{SIEM open source} e l'implementazione di strumenti di \textit{AI}/\textit{ML} per l'identificazione automatica di anomalie avrebbero comportato un ampliamento significativo della portata del progetto, potenzialmente compromettendo la qualità e i tempi di consegna degli obiettivi principali e obbligatori.
+
+\subsection*{Obiettivi personali}
+Al termine del progetto, ho condotto una valutazione retrospettiva personale, confrontando i risultati ottenuti con gli obiettivi personali inizialmente definiti nella sezione \hyperref[tab:obiettivi-personali]{Obiettivi personali}.\\\\
+La seguente tabella ne riassume gli esiti:
+\begin{center}
+\begin{longtable}{|p{0.1\textwidth}|p{0.7\textwidth}|p{0.15\textwidth}|}
+\hline
+\multicolumn{1}{|c|}{\textbf{ID}} & \multicolumn{1}{c|}{\textbf{Obiettivo personale}} & \multicolumn{1}{c|}{\textbf{Conseguito}} \\ 
+\hline 
+\endfirsthead
+\multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
+\hline
+\multicolumn{1}{|c|}{\textbf{ID}} & \multicolumn{1}{c|}{\textbf{Obiettivo personale}} & \multicolumn{1}{c|}{\textbf{Conseguito}} \\ \hline 
+\endhead
+\hline
+\multicolumn{3}{|r|}{{Continua nella prossima pagina...}}\\
+\hline
+\endfoot
+\endlastfoot 
+
+OP1 & Progettare e realizzare un sistema di \textit{honeypot} completo, partendo dall'analisi dei requisiti fino al collaudo finale, al fine di acquisire esperienza nello sviluppo di un progetto dall'inizio alla fine. & SI \\ \hline
+OP2 & Sviluppare un prodotto \textit{software} adottando i \textit{design pattern} e i principi architetturali appresi nel corso di Ingegneria del \textit{Software}, con particolare attenzione a modularità, scalabilità e manutenibilità del codice. & SI \\ \hline
+OP3 & Sviluppare competenze pratiche in ambito \textit{cybersecurity}, configurando e monitorando differenti tipologie di servizi vulnerabili da utilizzare all'interno del sistema di \textit{honeypot}. & SI \\ \hline
+OP4 & Acquisire competenze pratiche nell'utilizzo di tecnologie professionali come lo \textit{stack} \textit{TIG} e il protocollo \textit{MQTT}, comprendendone i principi di funzionamento e sperimentandone l'integrazione in una \textit{pipeline} di raccolta e visualizzazione dati. & SI \\ \hline
+OP5 & Approfondire le competenze di analisi dei dati raccolti, individuando \textit{pattern} ricorrenti negli attacchi e distinguendo tra traffico lecito e malevolo mediante metriche descrittive e \textit{dashboard} interattive. & SI \\ \hline
+
+\caption{Tabella degli obiettivi personali raggiunti.}
+\label{tab:obiettivi-personali-raggiunti}
+\end{longtable}
+\end{center}

@@ -47,7 +47,8 @@ Il \textit{container} l'ho configurato per esporre sia la porta 389 (\gls{ldap} 
 Questa configurazione consente di osservare tentativi di enumerazione utenti, iniezione \textit{LDAP} e altre tecniche di compromissione legate a \textit{directory service}, che rappresentano spesso un obiettivo strategico per gli attaccanti al fine di ottenere accessi privilegiati.
 La combinazione di questi servizi consente al sistema di coprire una grande varietà di scenari d'attacco: dall'accesso remoto tramite \textit{SSH}, alle compromissioni multi-protocollo, fino agli attacchi \textit{web} e ai tentativi di abuso di \textit{directory service}. 
 In questo modo l'\textit{honeypot} risulta non solo realistico, ma anche utile per raccogliere dati diversificati e rappresentativi delle principali minacce informatiche attuali.
-\subsection*{Diagramma delle classi e design pattern}
+\subsection*{Diagramma delle classi e \textit{design pattern}}
+\label{design-pattern}
 In seguito ho sviluppato il diagramma delle classi \textit{UML}, che rappresenta le principali classi e le loro relazioni all'interno del sistema.
 \begin{figure}[H]
     \begin{center}
@@ -59,7 +60,7 @@ In seguito ho sviluppato il diagramma delle classi \textit{UML}, che rappresenta
 Per la progettazione del sistema e la realizzazione del relativo diagramma ho applicato diversi \textit{design pattern} studiati durante il corso di Ingegneria del \textit{Software}. 
 Un primo esempio è rappresentato dal \textbf{\textit{Factory pattern}}, utilizzato nella classe \textit{ParserFactory}, la quale ha il compito di istanziare i diversi oggetti \textit{parser} a seconda del servizio vulnerabile da analizzare. 
 In questo modo la logica di creazione viene centralizzata e resa indipendente dal resto del sistema, favorendo estendibilità e manutenibilità. 
-Un ulteriore contributo deriva dall'applicazione dell'\textbf{\textit{Adapter pattern}}, che ha permesso di uniformare i \textit{log} provenienti da sorgenti differenti adattandoli al formato richiesto dal \textit{publisher} MQTT; tale approccio consente di integrare componenti con interfacce distinte senza doverne modificare l'implementazione originaria. 
+Un ulteriore contributo deriva dall'applicazione dell'\textbf{\textit{Adapter pattern}}, che ha permesso di uniformare i \textit{log} provenienti da sorgenti differenti adattandoli al formato richiesto dal \textit{publisher} \textit{MQTT}; tale approccio consente di integrare componenti con interfacce distinte senza doverne modificare l'implementazione originaria. 
 La gestione centralizzata dei \textit{log} è invece garantita dal \textbf{\textit{Singleton pattern}}, applicato alla classe \textit{LogManager}, che deve esistere in un'unica istanza per tutta la durata dell'esecuzione del programma, evitando così conflitti dovuti alla creazione di istanze multiple. 
 Per quanto riguarda le operazioni di \textit{parsing}, ho applicato lo \textbf{\textit{Strategy pattern}}, grazie al quale è possibile definire e incapsulare diverse strategie, una per ciascun servizio vulnerabile, e selezionare dinamicamente quella più appropriata durante l'esecuzione. 
 L'\textbf{\textit{Observer pattern}} risulta applicato in maniera implicita attraverso l'uso del protocollo \textit{MQTT}: i moduli di monitoraggio pubblicano i \textit{log} su specifici \textit{topic}, ai quali \textit{Telegraf} si iscrive per ricevere in tempo reale gli aggiornamenti. 

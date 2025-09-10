@@ -10,9 +10,10 @@ Per raggiungere tale scopo ho seguito una metodologia strutturata che ha previst
 
 Ho condotto le attività con un approccio incrementale: inizialmente ho testato ogni servizio singolarmente, per poi essere validarli nel contesto del sistema integrato. Questo mi ha permesso di verificare non solo la robustezza dei singoli moduli, ma anche la correttezza del flusso complessivo dei dati dal momento dell'attacco simulato fino alla loro visualizzazione nei sistemi di monitoraggio.  
 
-Le fasi di validazione si sono svolte nell'arco di una settimana, l'ultima dello stage, con revisioni e confronti quotidiani con il tutor aziendale, il quale ha seguito da vicino tutte le attività, fornendo indicazioni e approvazioni parziali. Al termine del processo, il tutor ha rilasciato la propria approvazione finale, confermando la validità del sistema sviluppato.  
+Le fasi di validazione si sono svolte nell'arco di una settimana, l'ultima dello \textit{stage}, con revisioni e confronti quotidiani con il tutor aziendale, il quale ha seguito da vicino tutte le attività, fornendo indicazioni e approvazioni parziali. Al termine del processo, il tutor ha rilasciato la propria approvazione finale, confermando la validità del sistema sviluppato.  
 
 \subsection*{Conformità ai requisiti}
+\label{requisiti-soddisfatti}
 Dei requisiti iniziali definiti nella sezione \hyperref[requisiti]{requisiti}, il sistema sviluppato soddisfa pienamente tutti i requisiti funzionali, non funzionali e di vincolo.
 Sebbene i requisiti non vadano a coprire completamente tutte le funzionalità richieste dagli obiettivi del progetto, il sistema risulta comunque essere un prodotto valido e funzionante, in grado di monitorare e analizzare efficacemente i tentativi di attacco sui servizi vulnerabili selezionati.
 \begin{center}
@@ -49,7 +50,7 @@ Facendo ciò abbiamo raggiunto i seguenti dati di validazione:
 \multicolumn{1}{|c|}{\textbf{Servizio}} & 
 \multicolumn{1}{c|}{\textbf{Scenari testati}} & 
 \multicolumn{1}{c|}{\textbf{Tipologie attacchi}} & 
-\multicolumn{1}{c|}{\textbf{Log generati}} \\ 
+\multicolumn{1}{c|}{\textbf{\textit{Log} generati}} \\ 
 \hline
 \endfirsthead
 
@@ -69,7 +70,7 @@ Facendo ciò abbiamo raggiunto i seguenti dati di validazione:
 \textit{OpenLDAP} & 6 & \textit{LDAP injection, enumeration} & 28 eventi \\ \hline
 \textbf{TOTALE} & 33 & 8 tipologie & 225 eventi \\ \hline
 
-\caption{Tabella quantitativa degli scenari di attacco testati e dei log generati.}
+\caption{Tabella quantitativa degli scenari di attacco testati e dei \textit{log} generati.}
 \label{tab:scenari-attacco}
 \end{longtable}
 \end{center}
@@ -87,7 +88,7 @@ Facendo ciò abbiamo raggiunto i seguenti dati di validazione:
 
 \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
 \hline
-\multicolumn{4}{|c|}{\textbf{Strumenti e risultati di testing}} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Strumenti e risultati di \textit{testing}}} \\ \hline
 \endhead
 
 \hline \multicolumn{4}{|r|}{{Continua nella prossima pagina...}} \\ \hline
@@ -99,7 +100,7 @@ Facendo ciò abbiamo raggiunto i seguenti dati di validazione:
 \textit{Hydra} & 8 & \textit{Brute-force SSH, FTP} & 100\% tentativi \textit{loggati} \\ \hline
 \textit{LDAP-utils} & 6 & \textit{LDAP queries, file upload} & 100\% eventi tracciati \\ \hline
 
-\caption{Tabella quantitativa degli strumenti e dei risultati dei test.}
+\caption{Tabella quantitativa degli strumenti e dei risultati dei \textit{test}.}
 \label{tab:strumenti-testing}
 \end{longtable}
 \end{center}

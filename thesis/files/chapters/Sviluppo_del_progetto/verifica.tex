@@ -26,7 +26,7 @@ Questa impostazione ha garantito una verifica progressiva e multilivello, con un
 Parallelamente, ho adottato la metodologia \textit{TDD}, che ha guidato l'implementazione del codice attraverso cicli iterativi caratterizzati dalle tre fasi classiche:
 \begin{enumerate}
     \item \textit{\textbf{Red}}: scrittura del \textit{test} relativo a una nuova funzionalità, inizialmente fallito;
-    \item \textit{\textbf{Green}}: implementazione della funzionalità per soddisfare il \textit{test};
+    \item \textit{\textbf{Green}}: implementazione della funzionalità per superare il \textit{test};
     \item \textit{\textbf{Refactor}}: miglioramento del codice, mantenendo il superamento dei \textit{test}.
 \end{enumerate}
 Questo approccio ha favorito lo sviluppo di codice modulare, riusabile e più semplice da mantenere, riducendo la probabilità di introdurre errori nelle fasi successive.  
@@ -34,7 +34,7 @@ Questo approccio ha favorito lo sviluppo di codice modulare, riusabile e più se
 \begin{figure}[H]
     \begin{center}
     \includegraphics[width=0.9\textwidth]{img/TDD.png}
-    \caption{Schema del ciclo TDD utilizzato durante lo sviluppo.}
+    \caption{Schema del ciclo \textit{TDD} utilizzato durante lo sviluppo.}
     Fonte: \url{https://marsner.com/blog/why-test-driven-development-tdd/}
     \label{fig:tdd}
     \end{center}
@@ -57,7 +57,7 @@ Sono presenti \textit{test} unitari per ogni funzione e metodo del progetto, con
 \subsection{Risultati quantitativi}
 Il processo di \textit{testing} ha prodotto risultati significativi in termini di completezza e profondità delle verifiche svolte:
 \begin{itemize}
-    \item l'implementazione di 94 test unitari e di integrazione;
+    \item l'implementazione di 94 \textit{test} unitari e di integrazione;
     \item la copertura del codice ha raggiunto il 98\% (Figura~\ref{fig:coverage});
     \item l'identificazione e correzione di 5 \textit{bug} durante le iterazioni di \textit{TDD}, con una riduzione progressiva degli errori riscontrati nelle fasi avanzate.
 \end{itemize}
@@ -66,7 +66,7 @@ Tali risultati dimostrano l'efficacia della strategia di verifica adottata e l'i
 \begin{center}
 \begin{longtable}{|p{0.25\textwidth}|p{0.15\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|}
 \hline
-\multicolumn{1}{|c|}{\textbf{Tipo di test}} & 
+\multicolumn{1}{|c|}{\textbf{Tipo di \textit{test}}} & 
 \multicolumn{1}{c|}{\textbf{Quantità}} & 
 \multicolumn{1}{c|}{\textbf{Copertura}} & 
 \multicolumn{1}{c|}{\textbf{Durata esecuzione}} \\ 
@@ -75,7 +75,7 @@ Tali risultati dimostrano l'efficacia della strategia di verifica adottata e l'i
 
 \multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- Continuo della tabella}}\\
 \hline
-\multicolumn{4}{|c|}{\textbf{Attività di testing quantificate}} \\ \hline
+\multicolumn{4}{|c|}{\textbf{Attività di \textit{testing} quantificate}} \\ \hline
 \endhead
 
 \hline \multicolumn{4}{|r|}{{Continua nella prossima pagina...}} \\ \hline
@@ -83,8 +83,8 @@ Tali risultati dimostrano l'efficacia della strategia di verifica adottata e l'i
 
 \endlastfoot
 
-Test unitari & 78 & 98\% componenti & 14.5 secondi \\ \hline
-Test di integrazione & 16 & 100\% componenti & 3.7 secondi \\ \hline
+\textit{Test} unitari & 78 & 98\% componenti & 14.5 secondi \\ \hline
+\textit{Test} di integrazione & 16 & 100\% componenti & 3.7 secondi \\ \hline
 \textbf{TOTALE} & 94 & 98\% globale & 18.2 secondi \\ \hline
 
 \caption{Tabella quantitativa delle attività di \textit{testing}.}
