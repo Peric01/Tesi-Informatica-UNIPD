@@ -2,8 +2,8 @@
 \subsection{Architettura del sistema}
 Per questo progetto, essendo fondamentalmente un sistema \gls{etl}\glsadd{etl_def} ho deciso di adottare un'architettura a più livelli, che consente di separare le diverse funzionalità del sistema in moduli distinti e indipendenti.
 Il primo livello è rappresentato dai servizi \textit{honeypot}, che simulano i servizi di rete vulnerabili e raccolgono i \textit{log} delle attività sospette.
-Il secondo livello è costituito dai \textit{script} di raccolta e trasferimento dei \textit{log}, che elaborano i dati raccolti e li inviano al database.
-Il terzo livello è rappresentato dal \textit{database} \textit{InfluxDB}, che memorizza i \textit{log} in modo strutturato e consente di eseguire query sui dati.
+Il secondo livello è costituito dai \textit{script} di raccolta e trasferimento dei \textit{log}, che elaborano i dati raccolti e li inviano al \textit{database}.
+Il terzo livello è rappresentato dal \textit{database} \textit{InfluxDB}, che memorizza i \textit{log} in modo strutturato e consente di eseguire \textit{query} sui dati.
 Infine, i dati vengono visualizzati tramite \textit{Grafana}, che offre un'interfaccia intuitiva per l'analisi e la visualizzazione delle informazioni.
 \begin{figure}[H]
     \begin{center}
@@ -24,8 +24,8 @@ Ho quindi prodotto il seguente diagramma di flusso che rappresenta il funzioname
 \end{figure}
 Il diagramma mostra come i \textit{log} vengano generati dai servizi vulnerabili in seguito a tentativi di accesso o attacchi.
 Gli \textit{script} di monitoraggio raccolgono i \textit{log}, li elaborano e li pubblicano su un \textit{topic} tramite un \textit{publisher} del protocollo \textit{MQTT}.
-\textit{Telegraf}, poi, preleva i dati dal \textit{topic} e li invia al database \textit{InfluxDB} per la memorizzazione.
-Infine, \textit{Grafana} consente di visualizzare i dati memorizzati nel database tramite \textit{dashboard} personalizzate.
+\textit{Telegraf}, poi, preleva i dati dal \textit{topic} e li invia al \textit{database} \textit{InfluxDB} per la memorizzazione.
+Infine, \textit{Grafana} consente di visualizzare i dati memorizzati nel \textit{database} tramite \textit{dashboard} personalizzate.
 \subsection{Scelta dei servizi del sistema}
 Il sistema \textit{honeypot} doveva risultare realisticamente vulnerabile, in modo da attirare l'attenzione di potenziali attaccanti e raccogliere dati utili per l'analisi delle minacce. 
 Per questo motivo abbiamo selezionato servizi noti per le loro vulnerabilità e diffusione, in grado di coprire una varietà di protocolli e tecnologie. 
